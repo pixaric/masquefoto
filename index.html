@@ -114,7 +114,7 @@
         </div>
     </section>
 
-    <!-- SECCIÓN DE SERVICIOS (COLORES ORIGINALES + DISEÑO MINIMALISTA) -->
+    <!-- SECCIÓN DE SERVICIOS -->
     <section id="catalogo" class="py-24 px-6 bg-white border-t border-blue-50">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-20">
@@ -143,17 +143,17 @@
                 </div>
 
                 <!-- 2. Impresión Textil -->
-                <div class="p-8 rounded-3xl bg-blue-900 text-white shadow-xl card-shadow">
+                <div class="p-8 rounded-3xl bg-gray-50 card-shadow border border-gray-100">
                     <div class="flex items-center space-x-4 mb-6">
-                        <div class="w-10 h-10 bg-blue-500 rounded-xl flex items-center justify-center text-white font-bold text-xs shadow-lg shadow-blue-400/20">02</div>
-                        <h3 class="service-category-title text-blue-200">Impresión Textil</h3>
+                        <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center text-white font-bold text-xs shadow-lg shadow-blue-200">02</div>
+                        <h3 class="service-category-title">Impresión Textil</h3>
                     </div>
                     <ul class="space-y-1">
-                        <li class="service-list-item text-blue-100 hover:text-white">Polos/camisetas personalizadas</li>
-                        <li class="service-list-item text-blue-100 hover:text-white">Sudaderas y hoodies</li>
-                        <li class="service-list-item text-blue-100 hover:text-white">Gorras</li>
-                        <li class="service-list-item text-blue-100 hover:text-white">Bolsas tote bag</li>
-                        <li class="service-list-item text-blue-100 hover:text-white">Uniformes empresariales</li>
+                        <li class="service-list-item">Polos/camisetas personalizadas</li>
+                        <li class="service-list-item">Sudaderas y hoodies</li>
+                        <li class="service-list-item">Gorras</li>
+                        <li class="service-list-item">Bolsas tote bag</li>
+                        <li class="service-list-item">Uniformes empresariales</li>
                     </ul>
                 </div>
 
@@ -203,16 +203,17 @@
                 </div>
 
                 <!-- 6. Servicios de Diseño -->
-                <div class="p-8 rounded-3xl bg-blue-50 card-shadow border border-blue-100">
+                <div class="p-8 rounded-3xl bg-gray-50 card-shadow border border-gray-100">
                     <div class="flex items-center space-x-4 mb-6">
                         <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center text-white font-bold text-xs shadow-lg shadow-blue-200">06</div>
                         <h3 class="service-category-title">Diseño Creativo</h3>
                     </div>
                     <ul class="space-y-1">
-                        <li class="service-list-item font-semibold italic">Diseño de logotipos</li>
-                        <li class="service-list-item font-semibold italic">Edición fotográfica</li>
-                        <li class="service-list-item font-semibold italic">Identidad visual</li>
-                        <li class="service-list-item font-semibold italic">Diseño para redes sociales</li>
+                        <li class="service-list-item">Diseño de logotipos</li>
+                        <li class="service-list-item">Edición fotográfica</li>
+                        <li class="service-list-item">Identidad visual</li>
+                        <li class="service-list-item">Diseño para redes sociales</li>
+                        <li class="service-list-item">Manuales de marca</li>
                     </ul>
                 </div>
 
@@ -238,7 +239,7 @@
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                 <!-- Producto 1 -->
-                <div class="group cursor-pointer" onclick="contactProduct('Marco Nórdico')">
+                <div class="group cursor-pointer" onclick="contactProduct('Marco de Madera', 'Desde 25,00€')">
                     <div class="aspect-[3/4] bg-white rounded-3xl overflow-hidden mb-5 relative shadow-lg group-hover:shadow-2xl transition duration-500">
                         <img src="https://images.unsplash.com/photo-1513519245088-0e12902e35ca?auto=format&fit=crop&w=600&q=80" alt="Marco" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
                         <div class="absolute bottom-6 left-6 right-6">
@@ -250,8 +251,8 @@
                     <h3 class="font-bold text-lg px-2 color-accent">Marco de Madera</h3>
                     <p class="text-blue-600 font-semibold px-2">Desde 25,00€</p>
                 </div>
-                <!-- Repetición simplificada para brevedad en esta visualización -->
-                <div class="group cursor-pointer" onclick="contactProduct('Álbum Premium')">
+                <!-- Producto 2 -->
+                <div class="group cursor-pointer" onclick="contactProduct('Álbum Texturizado', '45,00€')">
                     <div class="aspect-[3/4] bg-white rounded-3xl overflow-hidden mb-5 relative shadow-lg group-hover:shadow-2xl transition duration-500">
                         <img src="https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=600&q=80" alt="Album" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
                         <div class="absolute bottom-6 left-6 right-6">
@@ -263,7 +264,8 @@
                     <h3 class="font-bold text-lg px-2 color-accent">Álbum Texturizado</h3>
                     <p class="text-blue-600 font-semibold px-2">45,00€</p>
                 </div>
-                <div class="group cursor-pointer" onclick="contactProduct('Canvas Artístico')">
+                <!-- Producto 3 -->
+                <div class="group cursor-pointer" onclick="contactProduct('Lienzo Canvas Pro', 'Desde 30,00€')">
                     <div class="aspect-[3/4] bg-white rounded-3xl overflow-hidden mb-5 relative shadow-lg group-hover:shadow-2xl transition duration-500">
                         <img src="https://images.unsplash.com/photo-1544457070-4cd773b4d71e?auto=format&fit=crop&w=600&q=80" alt="Canvas" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
                         <div class="absolute bottom-6 left-6 right-6">
@@ -275,7 +277,8 @@
                     <h3 class="font-bold text-lg px-2 color-accent">Lienzo Canvas Pro</h3>
                     <p class="text-blue-600 font-semibold px-2">Desde 30,00€</p>
                 </div>
-                <div class="group cursor-pointer" onclick="contactProduct('Pack Posters')">
+                <!-- Producto 4 -->
+                <div class="group cursor-pointer" onclick="contactProduct('Papel Fine Art', '18,50€')">
                     <div class="aspect-[3/4] bg-white rounded-3xl overflow-hidden mb-5 relative shadow-lg group-hover:shadow-2xl transition duration-500">
                         <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?auto=format&fit=crop&w=600&q=80" alt="Poster" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
                         <div class="absolute bottom-6 left-6 right-6">
@@ -300,7 +303,11 @@
             </div>
             <div>
                 <h4 class="font-bold mb-6 uppercase text-xs tracking-widest text-blue-400">Encuéntranos</h4>
-                <p class="text-blue-100 text-sm italic">Calle de la Imprenta, 12<br>28001 Madrid, España</p>
+                <p class="text-blue-100 text-sm italic">
+                    Av. Santa Cruz, 90<br>
+                    Local derecho, 38611 San Isidro<br>
+                    Santa Cruz de Tenerife, España
+                </p>
             </div>
             <div>
                 <h4 class="font-bold mb-6 uppercase text-xs tracking-widest text-blue-400">Atención</h4>
@@ -324,8 +331,8 @@
             window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, '_blank');
         }
 
-        function contactProduct(productName) {
-            const message = `Hola! 👋 Me interesa vuestro producto de tienda: *${productName}*`;
+        function contactProduct(productName, price) {
+            const message = `Hola! 👋 Me interesa vuestro producto: *${productName}* con un precio de *${price}*. ¿Podríais darme más detalles?`;
             window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, '_blank');
         }
     </script>

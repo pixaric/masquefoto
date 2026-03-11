@@ -15,10 +15,10 @@
             font-family: 'Playfair Display', serif;
         }
         .color-accent {
-            color: #1e40af; /* Azul Cobalto Original */
+            color: #1e40af;
         }
         .bg-accent-soft {
-            background-color: #eff6ff; /* Azul suave de fondo */
+            background-color: #eff6ff;
         }
         .btn-gradient {
             background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
@@ -52,7 +52,7 @@
         .service-list-item {
             font-size: 0.95rem;
             color: #475569;
-            padding: 6px 0;
+            padding: 4px 0;
             transition: all 0.2s ease;
             display: flex;
             align-items: center;
@@ -66,28 +66,44 @@
             margin-right: 8px;
             color: #93c5fd;
         }
-        .card-shadow {
-            transition: all 0.3s ease;
-        }
-        .card-shadow:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 25px -5px rgba(30, 64, 175, 0.1);
-        }
-
-        /* Estilos específicos para móvil en la sección Hero/WhatsApp */
+        
+        /* Ajuste de Hero para Móvil - Todo en una pantalla */
         @media (max-width: 768px) {
-            .mobile-hero-height {
-                min-height: 100vh;
+            .mobile-full-screen {
+                height: 100vh;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
+                padding-top: 60px;
+                padding-bottom: 20px;
             }
             .whatsapp-card {
-                margin-left: -1.5rem;
-                margin-right: -1.5rem;
-                border-radius: 0;
-                border-left: none;
-                border-right: none;
+                padding: 1.5rem !important;
+                margin-top: 1rem;
+            }
+            .hero-title {
+                font-size: 2.25rem !important;
+                margin-bottom: 0.5rem !important;
+            }
+            .hero-desc {
+                font-size: 0.9rem !important;
+                margin-bottom: 1.5rem !important;
+            }
+            .map-frame {
+                filter: none !important;
+                opacity: 1 !important;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .map-frame {
+                filter: grayscale(1) contrast(1.2);
+                opacity: 0.8;
+                transition: all 0.7s ease;
+            }
+            .map-frame:hover {
+                filter: grayscale(0);
+                opacity: 1;
             }
         }
     </style>
@@ -108,211 +124,218 @@
     </nav>
 
     <!-- Hero / Enviar por WhatsApp -->
-    <section id="inicio" class="pt-32 pb-20 px-6 bg-gradient-to-b from-blue-50 to-white mobile-hero-height">
+    <section id="inicio" class="px-6 bg-gradient-to-b from-blue-50 to-white mobile-full-screen md:pt-32 md:pb-20">
         <div class="max-w-4xl mx-auto text-center">
-            <h1 class="text-5xl md:text-7xl mb-6 leading-tight">Impresiones que <span class="color-accent">cobran vida</span>.</h1>
-            <p class="text-gray-600 text-lg mb-12 max-w-2xl mx-auto">Excelencia técnica y acabados profesionales para proyectos que exigen la máxima calidad visual.</p>
+            <h1 class="hero-title text-4xl md:text-7xl mb-4 md:mb-6 leading-tight">Impresiones que <span class="color-accent">cobran vida</span>.</h1>
+            <p class="hero-desc text-gray-600 text-base md:text-lg mb-6 md:mb-12 max-w-2xl mx-auto">Excelencia técnica y acabados profesionales para proyectos de máxima calidad visual.</p>
             
-            <!-- Area de Carga vía WhatsApp - Optimizada para móvil -->
-            <div class="whatsapp-card rounded-3xl p-10 md:p-16 mb-8 cursor-pointer group shadow-xl max-w-2xl mx-auto" onclick="sendWhatsAppFiles()">
+            <div class="whatsapp-card rounded-3xl p-8 md:p-16 cursor-pointer group shadow-xl max-w-2xl mx-auto" onclick="sendWhatsAppFiles()">
                 <div class="flex flex-col items-center">
-                    <div class="bg-[#25D366]/10 p-6 rounded-full mb-6 group-hover:scale-110 transition duration-300">
-                        <svg class="w-16 h-16 text-[#25D366]" fill="currentColor" viewBox="0 0 24 24">
+                    <div class="bg-[#25D366]/10 p-4 md:p-6 rounded-full mb-4 md:mb-6 group-hover:scale-110 transition duration-300">
+                        <svg class="w-10 h-10 md:w-16 md:h-16 text-[#25D366]" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
                     </div>
-                    <span class="text-xl md:text-2xl font-bold text-gray-800">Haz clic para enviar tus archivos</span>
-                    <p class="text-gray-500 mt-3 text-center max-w-sm font-light text-sm md:text-base">Atención personalizada inmediata para gestionar tu pedido y enviarte presupuesto.</p>
-                    
-                    <button class="mt-8 px-10 py-5 bg-[#25D366] text-white rounded-full text-xs md:text-sm font-bold shadow-xl uppercase tracking-widest hover:bg-[#1ebe57] transition-colors flex items-center">
-                        Enviar por WhatsApp
+                    <span class="text-xl md:text-2xl font-bold text-gray-800">Toca para enviar archivos</span>
+                    <p class="text-gray-500 mt-2 text-center max-w-sm font-light text-xs md:text-base">Atención inmediata para gestionar tu pedido y presupuesto.</p>
+                    <button class="mt-6 md:mt-8 px-8 py-4 md:px-10 md:py-5 bg-[#25D366] text-white rounded-full text-[10px] md:text-sm font-bold shadow-xl uppercase tracking-widest">
+                        WhatsApp Directo
                     </button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SECCIÓN DE SERVICIOS -->
+    <!-- SERVICIOS COMPLETOS -->
     <section id="catalogo" class="py-24 px-6 bg-white border-t border-blue-50">
         <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-20">
-                <span class="text-blue-600 font-bold uppercase tracking-[0.3em] text-xs mb-4 block">Catálogo Completo</span>
-                <h2 class="text-4xl md:text-5xl mb-6 color-accent">Servicios de Impresión</h2>
-                <p class="text-gray-500 text-sm max-w-xl mx-auto leading-relaxed">Presentamos una gama completa de soluciones gráficas bajo un estándar de calidad y exclusividad único.</p>
+            <div class="text-center mb-16">
+                <span class="text-blue-600 font-bold uppercase tracking-[0.3em] text-[10px] mb-4 block">Catálogo Completo</span>
+                <h2 class="text-3xl md:text-5xl color-accent">Nuestros Servicios</h2>
             </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-16">
-                
-                <!-- 1. Impresión en Objetos -->
-                <div class="p-8 rounded-3xl bg-gray-50 card-shadow border border-gray-100">
-                    <div class="flex items-center space-x-4 mb-6">
-                        <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center text-white font-bold text-xs shadow-lg shadow-blue-200">01</div>
-                        <h3 class="service-category-title">Impresión en Objetos</h3>
-                    </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
+                <!-- 1 -->
+                <div class="p-8 rounded-3xl bg-gray-50 border border-gray-100 shadow-sm">
+                    <h3 class="service-category-title mb-4">Impresión en Objetos</h3>
                     <ul class="space-y-1">
-                        <li class="service-list-item">Tazas y jarras personalizadas</li>
-                        <li class="service-list-item">Llaveros personalizados</li>
+                        <li class="service-list-item">Tazas y jarras</li>
+                        <li class="service-list-item">Llaveros</li>
                         <li class="service-list-item">Botellas y termos</li>
-                        <li class="service-list-item">Portarretratos personalizados</li>
-                        <li class="service-list-item">Imánes decorativos</li>
-                        <li class="service-list-item">Cojines personalizados</li>
-                        <li class="service-list-item">Rompecabezas impresos</li>
+                        <li class="service-list-item">Portarretratos</li>
+                        <li class="service-list-item">Imánes y Cojines</li>
                     </ul>
                 </div>
-
-                <!-- 2. Impresión Textil -->
-                <div class="p-8 rounded-3xl bg-gray-50 card-shadow border border-gray-100">
-                    <div class="flex items-center space-x-4 mb-6">
-                        <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center text-white font-bold text-xs shadow-lg shadow-blue-200">02</div>
-                        <h3 class="service-category-title">Impresión Textil</h3>
-                    </div>
+                <!-- 2 -->
+                <div class="p-8 rounded-3xl bg-gray-50 border border-gray-100 shadow-sm">
+                    <h3 class="service-category-title mb-4">Impresión Textil</h3>
                     <ul class="space-y-1">
-                        <li class="service-list-item">Polos/camisetas personalizadas</li>
-                        <li class="service-list-item">Sudaderas y hoodies</li>
+                        <li class="service-list-item">Polos y Camisetas</li>
+                        <li class="service-list-item">Sudaderas</li>
                         <li class="service-list-item">Gorras</li>
-                        <li class="service-list-item">Bolsas tote bag</li>
-                        <li class="service-list-item">Uniformes empresariales</li>
+                        <li class="service-list-item">Tote bags</li>
+                        <li class="service-list-item">Uniformes</li>
                     </ul>
                 </div>
-
-                <!-- 3. Impresión Decorativa -->
-                <div class="p-8 rounded-3xl bg-gray-50 card-shadow border border-gray-100">
-                    <div class="flex items-center space-x-4 mb-6">
-                        <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center text-white font-bold text-xs shadow-lg shadow-blue-200">03</div>
-                        <h3 class="service-category-title">Impresión Decorativa</h3>
-                    </div>
+                <!-- 3 -->
+                <div class="p-8 rounded-3xl bg-gray-50 border border-gray-100 shadow-sm">
+                    <h3 class="service-category-title mb-4">Decoración</h3>
                     <ul class="space-y-1">
-                        <li class="service-list-item">Cuadros en lienzo (canvas)</li>
-                        <li class="service-list-item">Posters y láminas</li>
-                        <li class="service-list-item">Vinilos decorativos</li>
-                        <li class="service-list-item">Stickers personalizados</li>
-                        <li class="service-list-item">Calendarios personalizados</li>
+                        <li class="service-list-item">Cuadros en Lienzo</li>
+                        <li class="service-list-item">Posters Fine Art</li>
+                        <li class="service-list-item">Vinilos de pared</li>
+                        <li class="service-list-item">Stickers</li>
+                        <li class="service-list-item">Calendarios</li>
                     </ul>
                 </div>
-
-                <!-- 4. Impresión Corporativa -->
-                <div class="p-8 rounded-3xl bg-gray-50 card-shadow border border-gray-100">
-                    <div class="flex items-center space-x-4 mb-6">
-                        <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center text-white font-bold text-xs shadow-lg shadow-blue-200">04</div>
-                        <h3 class="service-category-title">Corporativa</h3>
-                    </div>
+                <!-- 4 -->
+                <div class="p-8 rounded-3xl bg-gray-50 border border-gray-100 shadow-sm">
+                    <h3 class="service-category-title mb-4">Corporativo</h3>
                     <ul class="space-y-1">
-                        <li class="service-list-item">Tarjetas de presentación</li>
-                        <li class="service-list-item">Flyers y folletos</li>
-                        <li class="service-list-item">Sellos personalizados</li>
+                        <li class="service-list-item">Tarjetas de visita</li>
+                        <li class="service-list-item">Flyers y Folletos</li>
+                        <li class="service-list-item">Sellos de caucho</li>
                         <li class="service-list-item">Etiquetas adhesivas</li>
-                        <li class="service-list-item">Packaging personalizado</li>
+                        <li class="service-list-item">Packaging</li>
                     </ul>
                 </div>
-
-                <!-- 5. Publicidad y Rótulos -->
-                <div class="p-8 rounded-3xl bg-gray-50 card-shadow border border-gray-100">
-                    <div class="flex items-center space-x-4 mb-6">
-                        <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center text-white font-bold text-xs shadow-lg shadow-blue-200">05</div>
-                        <h3 class="service-category-title">Publicidad</h3>
-                    </div>
+                <!-- 5 -->
+                <div class="p-8 rounded-3xl bg-gray-50 border border-gray-100 shadow-sm">
+                    <h3 class="service-category-title mb-4">Gran Formato</h3>
                     <ul class="space-y-1">
                         <li class="service-list-item">Lonas publicitarias</li>
-                        <li class="service-list-item">Rótulos luminosos</li>
-                        <li class="service-list-item">Banners y roll-ups</li>
+                        <li class="service-list-item">Roll-ups</li>
+                        <li class="service-list-item">Banners</li>
+                        <li class="service-list-item">Rotulación de locales</li>
                         <li class="service-list-item">Señalética</li>
-                        <li class="service-list-item">Rotulación de vehículos</li>
                     </ul>
                 </div>
-
-                <!-- 6. Servicios de Diseño -->
-                <div class="p-8 rounded-3xl bg-gray-50 card-shadow border border-gray-100">
-                    <div class="flex items-center space-x-4 mb-6">
-                        <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center text-white font-bold text-xs shadow-lg shadow-blue-200">06</div>
-                        <h3 class="service-category-title">Diseño Creativo</h3>
-                    </div>
+                <!-- 6 -->
+                <div class="p-8 rounded-3xl bg-gray-50 border border-gray-100 shadow-sm">
+                    <h3 class="service-category-title mb-4">Diseño Gráfico</h3>
                     <ul class="space-y-1">
-                        <li class="service-list-item">Diseño de logotipos</li>
-                        <li class="service-list-item">Edición fotográfica</li>
-                        <li class="service-list-item">Identidad visual</li>
-                        <li class="service-list-item">Diseño para redes sociales</li>
-                        <li class="service-list-item">Manuales de marca</li>
+                        <li class="service-list-item">Creación de Logotipos</li>
+                        <li class="service-list-item">Identidad de Marca</li>
+                        <li class="service-list-item">Retoque Fotográfico</li>
+                        <li class="service-list-item">Diseño para Redes</li>
+                        <li class="service-list-item">Vectorización</li>
                     </ul>
                 </div>
-
-            </div>
-
-            <div class="mt-20 text-center">
-                <button onclick="sendWhatsAppFiles('presupuesto')" class="btn-gradient text-white px-12 py-4 rounded-full text-sm font-bold shadow-xl uppercase tracking-widest">
-                    Solicitar Presupuesto Online
-                </button>
             </div>
         </div>
     </section>
 
-    <!-- Tienda / Galería -->
+    <!-- TIENDA 8 PRODUCTOS 2 COLUMNAS -->
     <section id="tienda" class="py-24 px-6 bg-accent-soft">
         <div class="max-w-7xl mx-auto">
-            <div class="flex flex-col md:flex-row md:justify-between md:items-end mb-16">
-                <div>
-                    <span class="text-blue-600 font-bold uppercase tracking-[0.3em] text-xs mb-4">Tienda Exclusiva</span>
-                    <h2 class="text-4xl md:text-5xl mb-4 color-accent">Productos Terminados</h2>
-                </div>
+            <div class="text-center mb-16">
+                <span class="text-blue-600 font-bold uppercase tracking-[0.3em] text-[10px] mb-4">Catálogo de Productos</span>
+                <h2 class="text-3xl md:text-5xl color-accent">Disponibles ahora</h2>
             </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Producto 1 -->
-                <div class="group cursor-pointer" onclick="contactProduct('Marco de Madera', 'Desde 25,00€')">
-                    <div class="aspect-[3/4] bg-white rounded-3xl overflow-hidden mb-5 relative shadow-lg group-hover:shadow-2xl transition duration-500">
-                        <img src="https://images.unsplash.com/photo-1513519245088-0e12902e35ca?auto=format&fit=crop&w=600&q=80" alt="Marco" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
-                        <div class="absolute bottom-6 left-6 right-6">
-                            <div class="btn-gradient text-white py-4 rounded-2xl text-center font-bold text-xs uppercase tracking-widest opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition duration-300 shadow-xl">
-                                Consultar
-                            </div>
-                        </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4 md:gap-12">
+                <!-- P1 -->
+                <div class="group bg-white rounded-3xl overflow-hidden shadow-lg" onclick="contactProduct('Cuadro Canvas 40x60', '35.00€')">
+                    <div class="aspect-video bg-gray-200 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1544457070-4cd773b4d71e?auto=format&fit=crop&w=800&q=80" alt="Canvas" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
                     </div>
-                    <h3 class="font-bold text-lg px-2 color-accent">Marco de Madera</h3>
-                    <p class="text-blue-600 font-semibold px-2">Desde 25,00€</p>
+                    <div class="p-4 md:p-8 flex justify-between items-center">
+                        <div>
+                            <h3 class="font-bold text-sm md:text-xl color-accent">Cuadro Canvas 40x60</h3>
+                            <p class="text-blue-600 font-semibold text-xs md:text-base">35,00€</p>
+                        </div>
+                        <span class="hidden md:block text-[10px] bg-blue-100 text-blue-800 px-3 py-1 rounded-full font-bold uppercase">Ver más</span>
+                    </div>
                 </div>
-                <!-- Producto 2 -->
-                <div class="group cursor-pointer" onclick="contactProduct('Álbum Texturizado', '45,00€')">
-                    <div class="aspect-[3/4] bg-white rounded-3xl overflow-hidden mb-5 relative shadow-lg group-hover:shadow-2xl transition duration-500">
-                        <img src="https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=600&q=80" alt="Album" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
-                        <div class="absolute bottom-6 left-6 right-6">
-                            <div class="btn-gradient text-white py-4 rounded-2xl text-center font-bold text-xs uppercase tracking-widest opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition duration-300 shadow-xl">
-                                Consultar
-                            </div>
-                        </div>
+                <!-- P2 -->
+                <div class="group bg-white rounded-3xl overflow-hidden shadow-lg" onclick="contactProduct('Álbum Digital 24 pág', '49.00€')">
+                    <div class="aspect-video bg-gray-200 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=800&q=80" alt="Album" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
                     </div>
-                    <h3 class="font-bold text-lg px-2 color-accent">Álbum Texturizado</h3>
-                    <p class="text-blue-600 font-semibold px-2">45,00€</p>
+                    <div class="p-4 md:p-8 flex justify-between items-center">
+                        <div>
+                            <h3 class="font-bold text-sm md:text-xl color-accent">Álbum Digital 24 pág</h3>
+                            <p class="text-blue-600 font-semibold text-xs md:text-base">49,00€</p>
+                        </div>
+                        <span class="hidden md:block text-[10px] bg-blue-100 text-blue-800 px-3 py-1 rounded-full font-bold uppercase">Ver más</span>
+                    </div>
                 </div>
-                <!-- Producto 3 -->
-                <div class="group cursor-pointer" onclick="contactProduct('Lienzo Canvas Pro', 'Desde 30,00€')">
-                    <div class="aspect-[3/4] bg-white rounded-3xl overflow-hidden mb-5 relative shadow-lg group-hover:shadow-2xl transition duration-500">
-                        <img src="https://images.unsplash.com/photo-1544457070-4cd773b4d71e?auto=format&fit=crop&w=600&q=80" alt="Canvas" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
-                        <div class="absolute bottom-6 left-6 right-6">
-                            <div class="btn-gradient text-white py-4 rounded-2xl text-center font-bold text-xs uppercase tracking-widest opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition duration-300 shadow-xl">
-                                Consultar
-                            </div>
+                <!-- P3 -->
+                <div class="group bg-white rounded-3xl overflow-hidden shadow-lg" onclick="contactProduct('Taza Cerámica Personalizada', '12.00€')">
+                    <div class="aspect-video bg-gray-200 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1514228742587-6b1558fbed39?auto=format&fit=crop&w=800&q=80" alt="Taza" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-4 md:p-8 flex justify-between items-center">
+                        <div>
+                            <h3 class="font-bold text-sm md:text-xl color-accent">Taza Personalizada</h3>
+                            <p class="text-blue-600 font-semibold text-xs md:text-base">12,00€</p>
                         </div>
                     </div>
-                    <h3 class="font-bold text-lg px-2 color-accent">Lienzo Canvas Pro</h3>
-                    <p class="text-blue-600 font-semibold px-2">Desde 30,00€</p>
                 </div>
-                <!-- Producto 4 -->
-                <div class="group cursor-pointer" onclick="contactProduct('Papel Fine Art', '18,50€')">
-                    <div class="aspect-[3/4] bg-white rounded-3xl overflow-hidden mb-5 relative shadow-lg group-hover:shadow-2xl transition duration-500">
-                        <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?auto=format&fit=crop&w=600&q=80" alt="Poster" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
-                        <div class="absolute bottom-6 left-6 right-6">
-                            <div class="btn-gradient text-white py-4 rounded-2xl text-center font-bold text-xs uppercase tracking-widest opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition duration-300 shadow-xl">
-                                Consultar
-                            </div>
+                <!-- P4 -->
+                <div class="group bg-white rounded-3xl overflow-hidden shadow-lg" onclick="contactProduct('Camiseta Impresión Directa', '18.00€')">
+                    <div class="aspect-video bg-gray-200 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=800&q=80" alt="Camiseta" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-4 md:p-8 flex justify-between items-center">
+                        <div>
+                            <h3 class="font-bold text-sm md:text-xl color-accent">Camiseta Full Color</h3>
+                            <p class="text-blue-600 font-semibold text-xs md:text-base">18,00€</p>
                         </div>
                     </div>
-                    <h3 class="font-bold text-lg px-2 color-accent">Papel Fine Art</h3>
-                    <p class="text-blue-600 font-semibold px-2">18,50€</p>
+                </div>
+                <!-- P5 -->
+                <div class="group bg-white rounded-3xl overflow-hidden shadow-lg" onclick="contactProduct('Pack 100 Tarjetas Visita', '25.00€')">
+                    <div class="aspect-video bg-gray-200 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1589561024240-b3a979659307?auto=format&fit=crop&w=800&q=80" alt="Tarjetas" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-4 md:p-8 flex justify-between items-center">
+                        <div>
+                            <h3 class="font-bold text-sm md:text-xl color-accent">100 Tarjetas de Visita</h3>
+                            <p class="text-blue-600 font-semibold text-xs md:text-base">25,00€</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- P6 -->
+                <div class="group bg-white rounded-3xl overflow-hidden shadow-lg" onclick="contactProduct('Póster Fine Art A3', '15.00€')">
+                    <div class="aspect-video bg-gray-200 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?auto=format&fit=crop&w=800&q=80" alt="Poster" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-4 md:p-8 flex justify-between items-center">
+                        <div>
+                            <h3 class="font-bold text-sm md:text-xl color-accent">Póster Fine Art A3</h3>
+                            <p class="text-blue-600 font-semibold text-xs md:text-base">15,00€</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- P7 -->
+                <div class="group bg-white rounded-3xl overflow-hidden shadow-lg" onclick="contactProduct('Llavero Personalizado', '8.00€')">
+                    <div class="aspect-video bg-gray-200 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1584285418504-005513d3393a?auto=format&fit=crop&w=800&q=80" alt="Llavero" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-4 md:p-8 flex justify-between items-center">
+                        <div>
+                            <h3 class="font-bold text-sm md:text-xl color-accent">Llavero Grabado</h3>
+                            <p class="text-blue-600 font-semibold text-xs md:text-base">8,00€</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- P8 -->
+                <div class="group bg-white rounded-3xl overflow-hidden shadow-lg" onclick="contactProduct('Sello de Caucho 40mm', '22.00€')">
+                    <div class="aspect-video bg-gray-200 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1618331835717-801e976710b2?auto=format&fit=crop&w=800&q=80" alt="Sello" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-4 md:p-8 flex justify-between items-center">
+                        <div>
+                            <h3 class="font-bold text-sm md:text-xl color-accent">Sello de Caucho Autom.</h3>
+                            <p class="text-blue-600 font-semibold text-xs md:text-base">22,00€</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Sección del Mapa -->
-    <section id="ubicacion" class="w-full bg-white h-[450px] relative overflow-hidden">
+    <!-- MAPA -->
+    <section id="ubicacion" class="w-full bg-white h-[400px] md:h-[500px] relative overflow-hidden">
         <iframe 
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3521.8202029790696!2d-16.559858523775084!3d28.075486575971484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xc6a9f029c0f913d%3A0xe7a5697df0c8104c!2sAv.%20Santa%20Cruz%2C%2090%2C%2038611%20San%20Isidro%2C%20Santa%20Cruz%20de%20Tenerife!5e0!3m2!1ses!2ses!4v1709123456789!5m2!1ses!2ses" 
             width="100%" 
@@ -320,78 +343,48 @@
             style="border:0;" 
             allowfullscreen="" 
             loading="lazy" 
-            referrerpolicy="no-referrer-when-downgrade"
-            class="grayscale contrast-125 opacity-90 hover:grayscale-0 transition-all duration-700">
+            class="map-frame">
         </iframe>
-        <div class="absolute top-8 left-8 bg-white/90 backdrop-blur-md p-6 rounded-2xl shadow-2xl max-w-xs hidden md:block border border-blue-50">
-            <h4 class="font-bold color-accent mb-2 uppercase text-xs tracking-widest">Nuestra Ubicación</h4>
-            <p class="text-gray-600 text-sm italic mb-4">Av. Santa Cruz, 90. Local derecho. San Isidro, Tenerife.</p>
-            <a href="https://maps.google.com/maps?q=Av.+Santa+Cruz,+90,+38611+San+Isidro" target="_blank" class="text-blue-600 font-bold text-xs uppercase hover:underline">Abrir en Google Maps →</a>
+        <div class="absolute top-8 left-8 bg-white/95 backdrop-blur-md p-6 rounded-2xl shadow-2xl max-w-xs hidden md:block border border-blue-50">
+            <h4 class="font-bold color-accent mb-2 uppercase text-xs tracking-widest">San Isidro</h4>
+            <p class="text-gray-600 text-sm italic mb-4">Av. Santa Cruz, 90. Local derecho.</p>
+            <a href="https://maps.google.com/maps?q=Av.+Santa+Cruz,+90,+38611+San+Isidro" target="_blank" class="text-blue-600 font-bold text-[10px] uppercase hover:underline">Abrir en el mapa →</a>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-blue-950 text-white py-20 px-6">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
-            <div class="md:col-span-1">
-                <div class="text-3xl font-bold tracking-tighter italic mb-6 uppercase text-blue-200">Más que fotos</div>
-                <p class="text-blue-300 text-sm leading-relaxed max-w-sm">Elevando tus recuerdos a piezas de arte. Calidad artesanal combinada con tecnología de última generación.</p>
-            </div>
-            
-            <!-- Columna de Horarios -->
+    <!-- FOOTER -->
+    <footer class="bg-blue-950 text-white py-16 px-6">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
             <div>
-                <h4 class="font-bold mb-6 uppercase text-xs tracking-widest text-blue-400">Horario de Apertura</h4>
-                <div class="text-sm text-blue-100 space-y-2">
-                    <div class="flex justify-between border-b border-blue-900/50 pb-1">
-                        <span>Lunes a Viernes</span>
-                        <div class="text-right">
-                            <p>9:30 – 13:30</p>
-                            <p>16:30 – 19:30</p>
-                        </div>
-                    </div>
-                    <div class="flex justify-between border-b border-blue-900/50 pb-1 pt-1 text-blue-400/80">
-                        <span>Sábado</span>
-                        <span>Cerrado</span>
-                    </div>
-                    <div class="flex justify-between pt-1 text-blue-400/80">
-                        <span>Domingo</span>
-                        <span>Cerrado</span>
-                    </div>
+                <div class="text-2xl font-bold tracking-tighter italic mb-4 uppercase text-blue-200">Más que fotos</div>
+                <p class="text-blue-300 text-xs">Estudio gráfico y taller de impresión artesanal con tecnología profesional.</p>
+            </div>
+            <div>
+                <h4 class="font-bold mb-4 uppercase text-[10px] tracking-widest text-blue-400">Horario</h4>
+                <div class="text-xs text-blue-100 space-y-2">
+                    <p>Lunes - Viernes: 9:30 – 13:30 | 16:30 – 19:30</p>
+                    <p class="text-blue-500">Sábado y Domingo: Cerrado</p>
                 </div>
             </div>
-
             <div>
-                <h4 class="font-bold mb-6 uppercase text-xs tracking-widest text-blue-400">Encuéntranos</h4>
-                <p class="text-blue-100 text-sm italic">
-                    Av. Santa Cruz, 90<br>
-                    Local derecho, 38611 San Isidro<br>
-                    Santa Cruz de Tenerife, España
-                </p>
-            </div>
-            <div>
-                <h4 class="font-bold mb-6 uppercase text-xs tracking-widest text-blue-400">Atención</h4>
-                <a href="https://wa.me/34684792506" class="text-2xl font-bold text-blue-200 block mb-4">+34 684 792 506</a>
-                <p class="text-blue-300 text-sm">hola@masquefotos.com</p>
+                <h4 class="font-bold mb-4 uppercase text-[10px] tracking-widest text-blue-400">Dirección</h4>
+                <p class="text-blue-100 text-xs mb-4">Av. Santa Cruz, 90. San Isidro, Tenerife.</p>
+                <a href="tel:+34684792506" class="text-xl font-bold text-blue-200">+34 684 792 506</a>
             </div>
         </div>
-        <div class="max-w-7xl mx-auto border-t border-blue-900 mt-20 pt-8 text-center text-[10px] text-blue-500 uppercase tracking-widest">
+        <div class="mt-16 text-center text-[10px] text-blue-500 uppercase tracking-widest">
             © 2024 Más que fotos | Atelier Gráfico Profesional
         </div>
     </footer>
 
     <script>
         const WHATSAPP_NUMBER = "34684792506";
-
-        function sendWhatsAppFiles(type = "archivo") {
-            let message = "Hola! 👋 Me gustaría enviar unos archivos para imprimir. ¿Podríais darme información?";
-            if(type === 'presupuesto') {
-                message = "Hola! 👋 Me gustaría solicitar un presupuesto detallado para un proyecto de impresión.";
-            }
+        function sendWhatsAppFiles() {
+            const message = "Hola! 👋 Me gustaría enviar archivos para imprimir.";
             window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, '_blank');
         }
-
-        function contactProduct(productName, price) {
-            const message = `Hola! 👋 Me interesa vuestro producto: *${productName}* con un precio de *${price}*. ¿Podríais darme más detalles?`;
+        function contactProduct(name, price) {
+            const message = `Hola! 👋 Me interesa: *${name}* (${price}).`;
             window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, '_blank');
         }
     </script>

@@ -42,6 +42,14 @@
             background: rgba(255, 255, 255, 0.9);
             backdrop-filter: blur(12px);
         }
+        .service-number {
+            font-family: 'Inter', sans-serif;
+            font-size: 3rem;
+            font-weight: 800;
+            color: #e2e8f0;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
         .service-category-title {
             letter-spacing: 0.2em;
             font-size: 0.75rem;
@@ -53,13 +61,8 @@
             font-size: 0.95rem;
             color: #475569;
             padding: 4px 0;
-            transition: all 0.2s ease;
             display: flex;
             align-items: center;
-        }
-        .service-list-item:hover {
-            color: #1e40af;
-            padding-left: 4px;
         }
         .service-list-item::before {
             content: "•";
@@ -67,7 +70,6 @@
             color: #93c5fd;
         }
         
-        /* Ajuste de Hero para Móvil - Todo en una pantalla */
         @media (max-width: 768px) {
             .mobile-full-screen {
                 height: 100vh;
@@ -145,7 +147,7 @@
         </div>
     </section>
 
-    <!-- SERVICIOS COMPLETOS -->
+    <!-- SERVICIOS CON NUMERACIÓN -->
     <section id="catalogo" class="py-24 px-6 bg-white border-t border-blue-50">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16">
@@ -153,8 +155,9 @@
                 <h2 class="text-3xl md:text-5xl color-accent">Nuestros Servicios</h2>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
-                <!-- 1 -->
-                <div class="p-8 rounded-3xl bg-gray-50 border border-gray-100 shadow-sm">
+                <!-- 01 -->
+                <div class="p-8 rounded-3xl bg-gray-50 border border-gray-100 shadow-sm hover:shadow-md transition">
+                    <div class="service-number">01</div>
                     <h3 class="service-category-title mb-4">Impresión en Objetos</h3>
                     <ul class="space-y-1">
                         <li class="service-list-item">Tazas y jarras</li>
@@ -164,8 +167,9 @@
                         <li class="service-list-item">Imánes y Cojines</li>
                     </ul>
                 </div>
-                <!-- 2 -->
-                <div class="p-8 rounded-3xl bg-gray-50 border border-gray-100 shadow-sm">
+                <!-- 02 -->
+                <div class="p-8 rounded-3xl bg-gray-50 border border-gray-100 shadow-sm hover:shadow-md transition">
+                    <div class="service-number">02</div>
                     <h3 class="service-category-title mb-4">Impresión Textil</h3>
                     <ul class="space-y-1">
                         <li class="service-list-item">Polos y Camisetas</li>
@@ -175,8 +179,9 @@
                         <li class="service-list-item">Uniformes</li>
                     </ul>
                 </div>
-                <!-- 3 -->
-                <div class="p-8 rounded-3xl bg-gray-50 border border-gray-100 shadow-sm">
+                <!-- 03 -->
+                <div class="p-8 rounded-3xl bg-gray-50 border border-gray-100 shadow-sm hover:shadow-md transition">
+                    <div class="service-number">03</div>
                     <h3 class="service-category-title mb-4">Decoración</h3>
                     <ul class="space-y-1">
                         <li class="service-list-item">Cuadros en Lienzo</li>
@@ -186,8 +191,9 @@
                         <li class="service-list-item">Calendarios</li>
                     </ul>
                 </div>
-                <!-- 4 -->
-                <div class="p-8 rounded-3xl bg-gray-50 border border-gray-100 shadow-sm">
+                <!-- 04 -->
+                <div class="p-8 rounded-3xl bg-gray-50 border border-gray-100 shadow-sm hover:shadow-md transition">
+                    <div class="service-number">04</div>
                     <h3 class="service-category-title mb-4">Corporativo</h3>
                     <ul class="space-y-1">
                         <li class="service-list-item">Tarjetas de visita</li>
@@ -197,8 +203,9 @@
                         <li class="service-list-item">Packaging</li>
                     </ul>
                 </div>
-                <!-- 5 -->
-                <div class="p-8 rounded-3xl bg-gray-50 border border-gray-100 shadow-sm">
+                <!-- 05 -->
+                <div class="p-8 rounded-3xl bg-gray-50 border border-gray-100 shadow-sm hover:shadow-md transition">
+                    <div class="service-number">05</div>
                     <h3 class="service-category-title mb-4">Gran Formato</h3>
                     <ul class="space-y-1">
                         <li class="service-list-item">Lonas publicitarias</li>
@@ -208,8 +215,9 @@
                         <li class="service-list-item">Señalética</li>
                     </ul>
                 </div>
-                <!-- 6 -->
-                <div class="p-8 rounded-3xl bg-gray-50 border border-gray-100 shadow-sm">
+                <!-- 06 -->
+                <div class="p-8 rounded-3xl bg-gray-50 border border-gray-100 shadow-sm hover:shadow-md transition">
+                    <div class="service-number">06</div>
                     <h3 class="service-category-title mb-4">Diseño Gráfico</h3>
                     <ul class="space-y-1">
                         <li class="service-list-item">Creación de Logotipos</li>
@@ -223,7 +231,7 @@
         </div>
     </section>
 
-    <!-- TIENDA 8 PRODUCTOS 2 COLUMNAS -->
+    <!-- TIENDA 2 COLUMNAS -->
     <section id="tienda" class="py-24 px-6 bg-accent-soft">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16">
@@ -231,103 +239,93 @@
                 <h2 class="text-3xl md:text-5xl color-accent">Disponibles ahora</h2>
             </div>
             
-            <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4 md:gap-12">
-                <!-- P1 -->
-                <div class="group bg-white rounded-3xl overflow-hidden shadow-lg" onclick="contactProduct('Cuadro Canvas 40x60', '35.00€')">
+            <div class="grid grid-cols-2 md:grid-cols-2 gap-4 md:gap-12">
+                <!-- Producto 1 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-lg border border-blue-100">
                     <div class="aspect-video bg-gray-200 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1544457070-4cd773b4d71e?auto=format&fit=crop&w=800&q=80" alt="Canvas" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <img src="https://images.unsplash.com/photo-1544457070-4cd773b4d71e?auto=format&fit=crop&w=800&q=80" alt="Canvas" class="w-full h-full object-cover">
                     </div>
-                    <div class="p-4 md:p-8 flex justify-between items-center">
-                        <div>
-                            <h3 class="font-bold text-sm md:text-xl color-accent">Cuadro Canvas 40x60</h3>
-                            <p class="text-blue-600 font-semibold text-xs md:text-base">35,00€</p>
-                        </div>
-                        <span class="hidden md:block text-[10px] bg-blue-100 text-blue-800 px-3 py-1 rounded-full font-bold uppercase">Ver más</span>
+                    <div class="p-4 md:p-8">
+                        <h3 class="font-bold text-sm md:text-xl color-accent">Cuadro Canvas 40x60</h3>
+                        <p class="text-blue-600 font-semibold text-xs md:text-base mb-4">35,00€</p>
+                        <button onclick="contactProduct('Cuadro Canvas 40x60', '35.00€')" class="w-full bg-[#25D366] text-white py-2 rounded-full text-[10px] md:text-sm font-bold uppercase tracking-wider shadow-sm hover:brightness-110 transition">Consultar</button>
                     </div>
                 </div>
-                <!-- P2 -->
-                <div class="group bg-white rounded-3xl overflow-hidden shadow-lg" onclick="contactProduct('Álbum Digital 24 pág', '49.00€')">
+                <!-- Producto 2 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-lg border border-blue-100">
                     <div class="aspect-video bg-gray-200 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=800&q=80" alt="Album" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <img src="https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=800&q=80" alt="Album" class="w-full h-full object-cover">
                     </div>
-                    <div class="p-4 md:p-8 flex justify-between items-center">
-                        <div>
-                            <h3 class="font-bold text-sm md:text-xl color-accent">Álbum Digital 24 pág</h3>
-                            <p class="text-blue-600 font-semibold text-xs md:text-base">49,00€</p>
-                        </div>
-                        <span class="hidden md:block text-[10px] bg-blue-100 text-blue-800 px-3 py-1 rounded-full font-bold uppercase">Ver más</span>
+                    <div class="p-4 md:p-8">
+                        <h3 class="font-bold text-sm md:text-xl color-accent">Álbum Digital 24 pág</h3>
+                        <p class="text-blue-600 font-semibold text-xs md:text-base mb-4">49,00€</p>
+                        <button onclick="contactProduct('Álbum Digital 24 pág', '49.00€')" class="w-full bg-[#25D366] text-white py-2 rounded-full text-[10px] md:text-sm font-bold uppercase tracking-wider shadow-sm hover:brightness-110 transition">Consultar</button>
                     </div>
                 </div>
-                <!-- P3 -->
-                <div class="group bg-white rounded-3xl overflow-hidden shadow-lg" onclick="contactProduct('Taza Cerámica Personalizada', '12.00€')">
+                <!-- Producto 3 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-lg border border-blue-100">
                     <div class="aspect-video bg-gray-200 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1514228742587-6b1558fbed39?auto=format&fit=crop&w=800&q=80" alt="Taza" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <img src="https://images.unsplash.com/photo-1514228742587-6b1558fbed39?auto=format&fit=crop&w=800&q=80" alt="Taza" class="w-full h-full object-cover">
                     </div>
-                    <div class="p-4 md:p-8 flex justify-between items-center">
-                        <div>
-                            <h3 class="font-bold text-sm md:text-xl color-accent">Taza Personalizada</h3>
-                            <p class="text-blue-600 font-semibold text-xs md:text-base">12,00€</p>
-                        </div>
+                    <div class="p-4 md:p-8">
+                        <h3 class="font-bold text-sm md:text-xl color-accent">Taza Personalizada</h3>
+                        <p class="text-blue-600 font-semibold text-xs md:text-base mb-4">12,00€</p>
+                        <button onclick="contactProduct('Taza Personalizada', '12.00€')" class="w-full bg-[#25D366] text-white py-2 rounded-full text-[10px] md:text-sm font-bold uppercase tracking-wider shadow-sm hover:brightness-110 transition">Consultar</button>
                     </div>
                 </div>
-                <!-- P4 -->
-                <div class="group bg-white rounded-3xl overflow-hidden shadow-lg" onclick="contactProduct('Camiseta Impresión Directa', '18.00€')">
+                <!-- Producto 4 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-lg border border-blue-100">
                     <div class="aspect-video bg-gray-200 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=800&q=80" alt="Camiseta" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=800&q=80" alt="Camiseta" class="w-full h-full object-cover">
                     </div>
-                    <div class="p-4 md:p-8 flex justify-between items-center">
-                        <div>
-                            <h3 class="font-bold text-sm md:text-xl color-accent">Camiseta Full Color</h3>
-                            <p class="text-blue-600 font-semibold text-xs md:text-base">18,00€</p>
-                        </div>
+                    <div class="p-4 md:p-8">
+                        <h3 class="font-bold text-sm md:text-xl color-accent">Camiseta Full Color</h3>
+                        <p class="text-blue-600 font-semibold text-xs md:text-base mb-4">18,00€</p>
+                        <button onclick="contactProduct('Camiseta Full Color', '18.00€')" class="w-full bg-[#25D366] text-white py-2 rounded-full text-[10px] md:text-sm font-bold uppercase tracking-wider shadow-sm hover:brightness-110 transition">Consultar</button>
                     </div>
                 </div>
-                <!-- P5 -->
-                <div class="group bg-white rounded-3xl overflow-hidden shadow-lg" onclick="contactProduct('Pack 100 Tarjetas Visita', '25.00€')">
+                <!-- Producto 5 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-lg border border-blue-100">
                     <div class="aspect-video bg-gray-200 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1589561024240-b3a979659307?auto=format&fit=crop&w=800&q=80" alt="Tarjetas" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <img src="https://images.unsplash.com/photo-1589561024240-b3a979659307?auto=format&fit=crop&w=800&q=80" alt="Tarjetas" class="w-full h-full object-cover">
                     </div>
-                    <div class="p-4 md:p-8 flex justify-between items-center">
-                        <div>
-                            <h3 class="font-bold text-sm md:text-xl color-accent">100 Tarjetas de Visita</h3>
-                            <p class="text-blue-600 font-semibold text-xs md:text-base">25,00€</p>
-                        </div>
+                    <div class="p-4 md:p-8">
+                        <h3 class="font-bold text-sm md:text-xl color-accent">100 Tarjetas de Visita</h3>
+                        <p class="text-blue-600 font-semibold text-xs md:text-base mb-4">25,00€</p>
+                        <button onclick="contactProduct('100 Tarjetas de Visita', '25.00€')" class="w-full bg-[#25D366] text-white py-2 rounded-full text-[10px] md:text-sm font-bold uppercase tracking-wider shadow-sm hover:brightness-110 transition">Consultar</button>
                     </div>
                 </div>
-                <!-- P6 -->
-                <div class="group bg-white rounded-3xl overflow-hidden shadow-lg" onclick="contactProduct('Póster Fine Art A3', '15.00€')">
+                <!-- Producto 6 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-lg border border-blue-100">
                     <div class="aspect-video bg-gray-200 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?auto=format&fit=crop&w=800&q=80" alt="Poster" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?auto=format&fit=crop&w=800&q=80" alt="Poster" class="w-full h-full object-cover">
                     </div>
-                    <div class="p-4 md:p-8 flex justify-between items-center">
-                        <div>
-                            <h3 class="font-bold text-sm md:text-xl color-accent">Póster Fine Art A3</h3>
-                            <p class="text-blue-600 font-semibold text-xs md:text-base">15,00€</p>
-                        </div>
+                    <div class="p-4 md:p-8">
+                        <h3 class="font-bold text-sm md:text-xl color-accent">Póster Fine Art A3</h3>
+                        <p class="text-blue-600 font-semibold text-xs md:text-base mb-4">15,00€</p>
+                        <button onclick="contactProduct('Póster Fine Art A3', '15.00€')" class="w-full bg-[#25D366] text-white py-2 rounded-full text-[10px] md:text-sm font-bold uppercase tracking-wider shadow-sm hover:brightness-110 transition">Consultar</button>
                     </div>
                 </div>
-                <!-- P7 -->
-                <div class="group bg-white rounded-3xl overflow-hidden shadow-lg" onclick="contactProduct('Llavero Personalizado', '8.00€')">
+                <!-- Producto 7 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-lg border border-blue-100">
                     <div class="aspect-video bg-gray-200 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1584285418504-005513d3393a?auto=format&fit=crop&w=800&q=80" alt="Llavero" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <img src="https://images.unsplash.com/photo-1584285418504-005513d3393a?auto=format&fit=crop&w=800&q=80" alt="Llavero" class="w-full h-full object-cover">
                     </div>
-                    <div class="p-4 md:p-8 flex justify-between items-center">
-                        <div>
-                            <h3 class="font-bold text-sm md:text-xl color-accent">Llavero Grabado</h3>
-                            <p class="text-blue-600 font-semibold text-xs md:text-base">8,00€</p>
-                        </div>
+                    <div class="p-4 md:p-8">
+                        <h3 class="font-bold text-sm md:text-xl color-accent">Llavero Grabado</h3>
+                        <p class="text-blue-600 font-semibold text-xs md:text-base mb-4">8,00€</p>
+                        <button onclick="contactProduct('Llavero Grabado', '8.00€')" class="w-full bg-[#25D366] text-white py-2 rounded-full text-[10px] md:text-sm font-bold uppercase tracking-wider shadow-sm hover:brightness-110 transition">Consultar</button>
                     </div>
                 </div>
-                <!-- P8 -->
-                <div class="group bg-white rounded-3xl overflow-hidden shadow-lg" onclick="contactProduct('Sello de Caucho 40mm', '22.00€')">
+                <!-- Producto 8 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-lg border border-blue-100">
                     <div class="aspect-video bg-gray-200 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1618331835717-801e976710b2?auto=format&fit=crop&w=800&q=80" alt="Sello" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <img src="https://images.unsplash.com/photo-1618331835717-801e976710b2?auto=format&fit=crop&w=800&q=80" alt="Sello" class="w-full h-full object-cover">
                     </div>
-                    <div class="p-4 md:p-8 flex justify-between items-center">
-                        <div>
-                            <h3 class="font-bold text-sm md:text-xl color-accent">Sello de Caucho Autom.</h3>
-                            <p class="text-blue-600 font-semibold text-xs md:text-base">22,00€</p>
-                        </div>
+                    <div class="p-4 md:p-8">
+                        <h3 class="font-bold text-sm md:text-xl color-accent">Sello de Caucho Autom.</h3>
+                        <p class="text-blue-600 font-semibold text-xs md:text-base mb-4">22,00€</p>
+                        <button onclick="contactProduct('Sello de Caucho Autom.', '22.00€')" class="w-full bg-[#25D366] text-white py-2 rounded-full text-[10px] md:text-sm font-bold uppercase tracking-wider shadow-sm hover:brightness-110 transition">Consultar</button>
                     </div>
                 </div>
             </div>
@@ -357,7 +355,7 @@
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
             <div>
                 <div class="text-2xl font-bold tracking-tighter italic mb-4 uppercase text-blue-200">Más que fotos</div>
-                <p class="text-blue-300 text-xs">Estudio gráfico y taller de impresión artesanal con tecnología profesional.</p>
+                <p class="text-blue-300 text-xs">Atelier gráfico con tecnología profesional y trato personalizado.</p>
             </div>
             <div>
                 <h4 class="font-bold mb-4 uppercase text-[10px] tracking-widest text-blue-400">Horario</h4>
@@ -384,7 +382,7 @@
             window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, '_blank');
         }
         function contactProduct(name, price) {
-            const message = `Hola! 👋 Me interesa: *${name}* (${price}).`;
+            const message = `Hola! 👋 Me interesa información sobre: *${name}* (${price}).`;
             window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, '_blank');
         }
     </script>
